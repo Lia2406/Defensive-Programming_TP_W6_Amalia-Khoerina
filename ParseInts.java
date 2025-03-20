@@ -17,17 +17,19 @@ public class ParseInts {
         
         while (scanLine.hasNext()) {
             try {
+                //pake block try and catch
+                //ini mirip kyk if jika value adalah number maka akan ditambahkan dengan value number selanjutnya yang telah di scan
                 val = Integer.parseInt(scanLine.next());
                 sum += val;
             } catch (NumberFormatException e) {
-                // Skip non-integer values
+                // Skip yang bukan angka
                 continue;
             }
         }
         
         System.out.println("The sum of the integers on this line is " + sum);
         
-        // Close scanners
+        // Close scanners agar tidak ada memory leak
         scan.close();
         scanLine.close();
     }
